@@ -11,7 +11,40 @@
 		CB2BDACC25EDD7E90084735C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2BDACB25EDD7E90084735C /* ContentView.swift */; };
 		CB2BDACE25EDD7EA0084735C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB2BDACD25EDD7EA0084735C /* Assets.xcassets */; };
 		CB2BDAD125EDD7EA0084735C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB2BDAD025EDD7EA0084735C /* Preview Assets.xcassets */; };
+		CB2BDAE125EDD7FB0084735C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2BDAE025EDD7FB0084735C /* Cocoa.framework */; };
+		CB2BDAE425EDD7FB0084735C /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2BDAE325EDD7FB0084735C /* SafariExtensionHandler.swift */; };
+		CB2BDAE625EDD7FB0084735C /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2BDAE525EDD7FB0084735C /* SafariExtensionViewController.swift */; };
+		CB2BDAE925EDD7FB0084735C /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = CB2BDAE825EDD7FB0084735C /* script.js */; };
+		CB2BDAEB25EDD7FB0084735C /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CB2BDAEA25EDD7FB0084735C /* ToolbarItemIcon.pdf */; };
+		CB2BDAEE25EDD7FB0084735C /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB2BDAEC25EDD7FB0084735C /* SafariExtensionViewController.xib */; };
+		CB2BDAF325EDD7FB0084735C /* VocabularyLogExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CB2BDADE25EDD7FB0084735C /* VocabularyLogExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CB2BDAFB25EDD8430084735C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2BDAFA25EDD8430084735C /* API.swift */; };
+		CB2BDAFF25EDD8620084735C /* TermItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2BDAFE25EDD8620084735C /* TermItem.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CB2BDAF125EDD7FB0084735C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB2BDABE25EDD7E90084735C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB2BDADD25EDD7FB0084735C;
+			remoteInfo = VocabularyLogExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CB2BDAF725EDD7FB0084735C /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CB2BDAF325EDD7FB0084735C /* VocabularyLogExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CB2BDAC625EDD7E90084735C /* VocabularyLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VocabularyLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -21,6 +54,17 @@
 		CB2BDAD025EDD7EA0084735C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CB2BDAD225EDD7EA0084735C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB2BDAD325EDD7EA0084735C /* VocabularyLog.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VocabularyLog.entitlements; sourceTree = "<group>"; };
+		CB2BDADE25EDD7FB0084735C /* VocabularyLogExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = VocabularyLogExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB2BDAE025EDD7FB0084735C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		CB2BDAE325EDD7FB0084735C /* SafariExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionHandler.swift; sourceTree = "<group>"; };
+		CB2BDAE525EDD7FB0084735C /* SafariExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionViewController.swift; sourceTree = "<group>"; };
+		CB2BDAE825EDD7FB0084735C /* script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
+		CB2BDAEA25EDD7FB0084735C /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
+		CB2BDAED25EDD7FB0084735C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
+		CB2BDAEF25EDD7FB0084735C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB2BDAF025EDD7FB0084735C /* VocabularyLogExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VocabularyLogExtension.entitlements; sourceTree = "<group>"; };
+		CB2BDAFA25EDD8430084735C /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		CB2BDAFE25EDD8620084735C /* TermItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +75,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CB2BDADB25EDD7FB0084735C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB2BDAE125EDD7FB0084735C /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -38,6 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				CB2BDAC825EDD7E90084735C /* VocabularyLog */,
+				CB2BDAE225EDD7FB0084735C /* VocabularyLogExtension */,
+				CB2BDADF25EDD7FB0084735C /* Frameworks */,
 				CB2BDAC725EDD7E90084735C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				CB2BDAC625EDD7E90084735C /* VocabularyLog.app */,
+				CB2BDADE25EDD7FB0084735C /* VocabularyLogExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -55,6 +110,8 @@
 			children = (
 				CB2BDAC925EDD7E90084735C /* VocabularyLogApp.swift */,
 				CB2BDACB25EDD7E90084735C /* ContentView.swift */,
+				CB2BDAFE25EDD8620084735C /* TermItem.swift */,
+				CB2BDAFA25EDD8430084735C /* API.swift */,
 				CB2BDACD25EDD7EA0084735C /* Assets.xcassets */,
 				CB2BDAD225EDD7EA0084735C /* Info.plist */,
 				CB2BDAD325EDD7EA0084735C /* VocabularyLog.entitlements */,
@@ -71,6 +128,36 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		CB2BDADF25EDD7FB0084735C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB2BDAE025EDD7FB0084735C /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB2BDAE225EDD7FB0084735C /* VocabularyLogExtension */ = {
+			isa = PBXGroup;
+			children = (
+				CB2BDAE325EDD7FB0084735C /* SafariExtensionHandler.swift */,
+				CB2BDAE525EDD7FB0084735C /* SafariExtensionViewController.swift */,
+				CB2BDAEC25EDD7FB0084735C /* SafariExtensionViewController.xib */,
+				CB2BDAEF25EDD7FB0084735C /* Info.plist */,
+				CB2BDAF025EDD7FB0084735C /* VocabularyLogExtension.entitlements */,
+				CB2BDAE725EDD7FB0084735C /* Resources */,
+			);
+			path = VocabularyLogExtension;
+			sourceTree = "<group>";
+		};
+		CB2BDAE725EDD7FB0084735C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CB2BDAE825EDD7FB0084735C /* script.js */,
+				CB2BDAEA25EDD7FB0084735C /* ToolbarItemIcon.pdf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -81,15 +168,34 @@
 				CB2BDAC225EDD7E90084735C /* Sources */,
 				CB2BDAC325EDD7E90084735C /* Frameworks */,
 				CB2BDAC425EDD7E90084735C /* Resources */,
+				CB2BDAF725EDD7FB0084735C /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CB2BDAF225EDD7FB0084735C /* PBXTargetDependency */,
 			);
 			name = VocabularyLog;
 			productName = VocabularyLog;
 			productReference = CB2BDAC625EDD7E90084735C /* VocabularyLog.app */;
 			productType = "com.apple.product-type.application";
+		};
+		CB2BDADD25EDD7FB0084735C /* VocabularyLogExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB2BDAF425EDD7FB0084735C /* Build configuration list for PBXNativeTarget "VocabularyLogExtension" */;
+			buildPhases = (
+				CB2BDADA25EDD7FB0084735C /* Sources */,
+				CB2BDADB25EDD7FB0084735C /* Frameworks */,
+				CB2BDADC25EDD7FB0084735C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VocabularyLogExtension;
+			productName = VocabularyLogExtension;
+			productReference = CB2BDADE25EDD7FB0084735C /* VocabularyLogExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -101,6 +207,9 @@
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
 					CB2BDAC525EDD7E90084735C = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					CB2BDADD25EDD7FB0084735C = {
 						CreatedOnToolsVersion = 12.4;
 					};
 				};
@@ -119,6 +228,7 @@
 			projectRoot = "";
 			targets = (
 				CB2BDAC525EDD7E90084735C /* VocabularyLog */,
+				CB2BDADD25EDD7FB0084735C /* VocabularyLogExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -133,6 +243,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CB2BDADC25EDD7FB0084735C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB2BDAEE25EDD7FB0084735C /* SafariExtensionViewController.xib in Resources */,
+				CB2BDAEB25EDD7FB0084735C /* ToolbarItemIcon.pdf in Resources */,
+				CB2BDAE925EDD7FB0084735C /* script.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -140,12 +260,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB2BDAFF25EDD8620084735C /* TermItem.swift in Sources */,
 				CB2BDACC25EDD7E90084735C /* ContentView.swift in Sources */,
+				CB2BDAFB25EDD8430084735C /* API.swift in Sources */,
 				CB2BDACA25EDD7E90084735C /* VocabularyLogApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CB2BDADA25EDD7FB0084735C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB2BDAE625EDD7FB0084735C /* SafariExtensionViewController.swift in Sources */,
+				CB2BDAE425EDD7FB0084735C /* SafariExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CB2BDAF225EDD7FB0084735C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB2BDADD25EDD7FB0084735C /* VocabularyLogExtension */;
+			targetProxy = CB2BDAF125EDD7FB0084735C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CB2BDAEC25EDD7FB0084735C /* SafariExtensionViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB2BDAED25EDD7FB0084735C /* Base */,
+			);
+			name = SafariExtensionViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CB2BDAD425EDD7EA0084735C /* Debug */ = {
@@ -266,6 +416,7 @@
 		CB2BDAD725EDD7EA0084735C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = VocabularyLog/VocabularyLog.entitlements;
@@ -290,6 +441,7 @@
 		CB2BDAD825EDD7EA0084735C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = VocabularyLog/VocabularyLog.entitlements;
@@ -311,6 +463,46 @@
 			};
 			name = Release;
 		};
+		CB2BDAF525EDD7FB0084735C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = VocabularyLogExtension/VocabularyLogExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L27L4K8SQU;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = VocabularyLogExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = shockerella.VocabularyLog.VocabularyLogExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		CB2BDAF625EDD7FB0084735C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = VocabularyLogExtension/VocabularyLogExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L27L4K8SQU;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = VocabularyLogExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = shockerella.VocabularyLog.VocabularyLogExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -328,6 +520,15 @@
 			buildConfigurations = (
 				CB2BDAD725EDD7EA0084735C /* Debug */,
 				CB2BDAD825EDD7EA0084735C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB2BDAF425EDD7FB0084735C /* Build configuration list for PBXNativeTarget "VocabularyLogExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB2BDAF525EDD7FB0084735C /* Debug */,
+				CB2BDAF625EDD7FB0084735C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
