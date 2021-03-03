@@ -4,13 +4,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 document.addEventListener("contextmenu", handleContextMenu, false);
 function handleContextMenu(event) {
-    var selectedText =  window.getSelection().toString();
+    var selectedText =  window.getSelection().toString().trim();
     let surroundingBlurb = window.getSelection().baseNode.parentElement.innerText
     let exampleSentences = surroundingBlurb.match( /[^\.!\?]+[\.!\?]+/g )
     var appropriateSentence = ""
     for (var sentence of exampleSentences) {
         if (sentence.includes(selectedText)) {
-            appropriateSentence = sentence
+            appropriateSentence = sentence.trim()
             console.log("appropriateSentence", appropriateSentence)
         }
     }

@@ -2,14 +2,6 @@ import SwiftUI
 
 let defaults = UserDefaults.init(suiteName: "L27L4K8SQU.VocabularyLog")!
 
-struct Term: Codable {
-    var word: String
-    var exampleSentence: String
-    var url: String
-    var preferredDef: String
-    var id = UUID()
-}
-
 
 struct ContentView: View {
 
@@ -20,7 +12,7 @@ struct ContentView: View {
         var vocabularyLog = (try? JSONDecoder().decode([Term].self, from: vocabularyLogAsData)) ?? [Term]()
 
         HStack {
-            Text("Vocabulary Log")
+            Text("Vocabulary Log 􀌀")
                 .font(Font.custom("SF Compact Rounded", size: 33))
                 .fontWeight(.bold)
                 .foregroundColor(Color.yellow)
@@ -30,10 +22,7 @@ struct ContentView: View {
         
         List {
             ForEach(Array((vocabularyLog).enumerated()), id: \.1.id) { (index, term) in
-                VStack {
-                    TermItem(term: term.word, index: index, source: term.url, example: term.exampleSentence)
-                    Divider()
-                }
+                TermItem(term: term, index: index)
             }.onDelete(perform: { indexSet in
                 vocabularyLog.remove(atOffsets: indexSet)
                 updateLogInAppStorage(log: vocabularyLog)

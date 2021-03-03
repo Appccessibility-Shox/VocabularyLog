@@ -20,6 +20,8 @@
 		CB2BDAF325EDD7FB0084735C /* VocabularyLogExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CB2BDADE25EDD7FB0084735C /* VocabularyLogExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CB2BDAFB25EDD8430084735C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2BDAFA25EDD8430084735C /* API.swift */; };
 		CB2BDAFF25EDD8620084735C /* TermItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2BDAFE25EDD8620084735C /* TermItem.swift */; };
+		CBCEB0AA25EEFF75002587E7 /* Term.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCEB0A925EEFF75002587E7 /* Term.swift */; };
+		CBCEB0AB25EEFF75002587E7 /* Term.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCEB0A925EEFF75002587E7 /* Term.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,7 @@
 		CB2BDAF025EDD7FB0084735C /* VocabularyLogExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VocabularyLogExtension.entitlements; sourceTree = "<group>"; };
 		CB2BDAFA25EDD8430084735C /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		CB2BDAFE25EDD8620084735C /* TermItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermItem.swift; sourceTree = "<group>"; };
+		CBCEB0A925EEFF75002587E7 /* Term.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Term.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +111,7 @@
 		CB2BDAC825EDD7E90084735C /* VocabularyLog */ = {
 			isa = PBXGroup;
 			children = (
+				CBCEB0A925EEFF75002587E7 /* Term.swift */,
 				CB2BDAC925EDD7E90084735C /* VocabularyLogApp.swift */,
 				CB2BDACB25EDD7E90084735C /* ContentView.swift */,
 				CB2BDAFE25EDD8620084735C /* TermItem.swift */,
@@ -262,6 +266,7 @@
 			files = (
 				CB2BDAFF25EDD8620084735C /* TermItem.swift in Sources */,
 				CB2BDACC25EDD7E90084735C /* ContentView.swift in Sources */,
+				CBCEB0AA25EEFF75002587E7 /* Term.swift in Sources */,
 				CB2BDAFB25EDD8430084735C /* API.swift in Sources */,
 				CB2BDACA25EDD7E90084735C /* VocabularyLogApp.swift in Sources */,
 			);
@@ -273,6 +278,7 @@
 			files = (
 				CB2BDAE625EDD7FB0084735C /* SafariExtensionViewController.swift in Sources */,
 				CB2BDAE425EDD7FB0084735C /* SafariExtensionHandler.swift in Sources */,
+				CBCEB0AB25EEFF75002587E7 /* Term.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
