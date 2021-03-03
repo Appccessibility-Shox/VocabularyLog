@@ -6,7 +6,11 @@ document.addEventListener("contextmenu", handleContextMenu, false);
 function handleContextMenu(event) {
     var selectedText =  window.getSelection().toString().trim();
     let surroundingBlurb = window.getSelection().baseNode.parentElement.innerText
-    let exampleSentences = surroundingBlurb.match( /[^\.!\?]+[\.!\?]+/g )
+    var exampleSentences = surroundingBlurb.match( /[^\.!\?]+[\.!\?]+/g )
+    if (exampleSentences == null) {
+        exampleSentences = [window.getSelection().baseNode.textContent]
+    }
+    console.log(exampleSentences)
     var appropriateSentence = ""
     for (var sentence of exampleSentences) {
         if (sentence.includes(selectedText)) {

@@ -21,7 +21,7 @@ struct TermItem: View {
 
         VStack(alignment: .leading) {
             HStack {
-                Text("\(word):")
+                Text("\(word.capitalized):")
                     .font(.title3)
                     .fontWeight(.bold)
                     .foregroundColor(Color.yellow)
