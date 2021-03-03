@@ -29,33 +29,41 @@ struct ContentView: View {
                 .padding(.init(top: 15, leading: 20, bottom: -0.5, trailing: 0))
             Spacer()
         }
-        .sheet(isPresented: $showingDetail) {
-            AddWordSheet(showingDetail: $showingDetail)
-        }
-        
-        List {
-            ForEach(Array((vocabularyLog).enumerated()), id: \.1.id) { (index, term) in
-                TermItem(term: term, index: index)
-            }
-            .onDelete(perform: { indexSet in
-                vocabularyLog.remove(atOffsets: indexSet)
-                updateLogInAppStorage(log: vocabularyLog)
-            })
-            .onMove(perform: { indices, newOffset in
-                vocabularyLog.move(fromOffsets: indices, toOffset: newOffset)
-                updateLogInAppStorage(log: vocabularyLog)
-            })
-        }
         .toolbar(content: {
             Spacer()
             Button(action: {
                 showingDetail.toggle()
             }, label: {
                 Image(systemName: "plus")
-                    .foregroundColor(Color.init("BW"))
+                    .foregroundColor(Color.gray)
             })
         })
-        .frame(minWidth: 450, minHeight: 450)
+        .sheet(isPresented: $showingDetail) {
+            AddWordSheet(showingDetail: $showingDetail)
+        }
+        
+        if vocabularyLog.count > 0 {
+            List {
+                ForEach(Array((vocabularyLog).enumerated()), id: \.1.id) { (index, term) in
+                    TermItem(term: term, index: index)
+                        .padding(.vertical, 5)
+                }
+                .onDelete(perform: { indexSet in
+                    vocabularyLog.remove(atOffsets: indexSet)
+                    updateLogInAppStorage(log: vocabularyLog)
+                })
+                .onMove(perform: { indices, newOffset in
+                    vocabularyLog.move(fromOffsets: indices, toOffset: newOffset)
+                    updateLogInAppStorage(log: vocabularyLog)
+                })
+            }
+            .frame(minWidth: 450, minHeight: 425, maxHeight: .infinity)
+        } else {
+            Text("No Terms Logged")
+                .font(.largeTitle)
+                .foregroundColor(Color.gray.opacity(0.5))
+                .frame(minWidth: 450, minHeight: 425, maxHeight: .infinity)
+        }
 
     }
 
