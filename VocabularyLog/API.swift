@@ -19,7 +19,7 @@ enum NetworkError: Error {
 }
 
 class Api: ObservableObject {
-    func define(word: String, completion: @escaping (Result<[Response]?,NetworkError>)->() ) {
+    func define(word: String, completion: @escaping (Result<[Definition],NetworkError>)->() ) {
         guard let url = URL(string: "https://api.dictionaryapi.dev/api/v2/entries/en_US/\(word)") else {
             completion(.failure(.badURL))
             return
@@ -29,9 +29,14 @@ class Api: ObservableObject {
             if let data = data {
                 if let decodedResponse = try? JSONDecoder().decode([Response].self, from: data) {
                     DispatchQueue.main.async {
-                        //resultObject?.first?.meanings.first?.definitions
-                        if decodedResponse.first?.meanings.first?.definitions.count ?? 0 > 0 {
-                            completion(.success(decodedResponse))
+                        var definitions = [Definition]()
+                        for interpretation in decodedResponse {
+                            for meaning in interpretation.meanings {
+                                definitions.append(contentsOf: meaning.definitions)
+                            }
+                        }
+                        if definitions.count > 0 {
+                            completion(.success(definitions))
                         } else {
                             completion(.failure(.decodingError))
                         }

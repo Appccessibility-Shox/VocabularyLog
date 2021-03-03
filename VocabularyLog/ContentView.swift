@@ -52,10 +52,6 @@ struct ContentView: View {
                     vocabularyLog.remove(atOffsets: indexSet)
                     updateLogInAppStorage(log: vocabularyLog)
                 })
-                .onMove(perform: { indices, newOffset in
-                    vocabularyLog.move(fromOffsets: indices, toOffset: newOffset)
-                    updateLogInAppStorage(log: vocabularyLog)
-                })
             }
             .frame(minWidth: 450, minHeight: 425, maxHeight: .infinity)
         } else {
