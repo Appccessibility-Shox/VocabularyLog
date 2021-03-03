@@ -19,7 +19,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>NSExtension</key>
@@ -35,33 +35,22 @@
 				<string>script.js</string>
 			</dict>
 		</array>
-		<key>SFSafariToolbarItem</key>
-		<dict>
-			<key>Action</key>
-			<string>Command</string>
-			<key>Identifier</key>
-			<string>Button</string>
-			<key>Image</key>
-			<string>ToolbarItemIcon.pdf</string>
-			<key>Label</key>
-			<string>Your Button</string>
-		</dict>
+		<key>SFSafariContextMenu</key>
+		<array>
+			<dict>
+				<key>Command</key>
+				<string>Search</string>
+				<key>Text</key>
+				<string>Add word to Vocabulary Log</string>
+			</dict>
+		</array>
 		<key>SFSafariWebsiteAccess</key>
 		<dict>
 			<key>Level</key>
 			<string>All</string>
 		</dict>
-		<key>SFSafariContextMenu</key>
-		<array>
-			<dict>
-				<key>Text</key>
-				<string>Add word to Vocabulary Log</string>
-				<key>Command</key>
-				<string>Search</string>
-			</dict>
-		</array>
 	</dict>
 	<key>NSHumanReadableDescription</key>
-	<string>This is VocabularyLogExtension. You should tell us what your extension does here.</string>
+	<string>Vocabulary Log for Safari takes the hassle out of expanding your vocabulary and makes discovering &amp; learning words fun again.</string>
 </dict>
 </plist>
