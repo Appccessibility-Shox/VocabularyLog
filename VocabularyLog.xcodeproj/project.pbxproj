@@ -14,7 +14,6 @@
 		CB2BDAE125EDD7FB0084735C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2BDAE025EDD7FB0084735C /* Cocoa.framework */; };
 		CB2BDAE425EDD7FB0084735C /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2BDAE325EDD7FB0084735C /* SafariExtensionHandler.swift */; };
 		CB2BDAE925EDD7FB0084735C /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = CB2BDAE825EDD7FB0084735C /* script.js */; };
-		CB2BDAEB25EDD7FB0084735C /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CB2BDAEA25EDD7FB0084735C /* ToolbarItemIcon.pdf */; };
 		CB2BDAF325EDD7FB0084735C /* VocabularyLogExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CB2BDADE25EDD7FB0084735C /* VocabularyLogExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CB2BDAFB25EDD8430084735C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2BDAFA25EDD8430084735C /* API.swift */; };
 		CB2BDAFF25EDD8620084735C /* TermItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2BDAFE25EDD8620084735C /* TermItem.swift */; };
@@ -59,7 +58,6 @@
 		CB2BDAE025EDD7FB0084735C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		CB2BDAE325EDD7FB0084735C /* SafariExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionHandler.swift; sourceTree = "<group>"; };
 		CB2BDAE825EDD7FB0084735C /* script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
-		CB2BDAEA25EDD7FB0084735C /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
 		CB2BDAEF25EDD7FB0084735C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB2BDAF025EDD7FB0084735C /* VocabularyLogExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VocabularyLogExtension.entitlements; sourceTree = "<group>"; };
 		CB2BDAFA25EDD8430084735C /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -154,7 +152,6 @@
 			isa = PBXGroup;
 			children = (
 				CB2BDAE825EDD7FB0084735C /* script.js */,
-				CB2BDAEA25EDD7FB0084735C /* ToolbarItemIcon.pdf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -248,7 +245,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB2BDAEB25EDD7FB0084735C /* ToolbarItemIcon.pdf in Resources */,
 				CB2BDAE925EDD7FB0084735C /* script.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,7 +409,7 @@
 				CODE_SIGN_ENTITLEMENTS = VocabularyLog/VocabularyLog.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"VocabularyLog/Preview Content\"";
 				DEVELOPMENT_TEAM = L27L4K8SQU;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -439,7 +435,7 @@
 				CODE_SIGN_ENTITLEMENTS = VocabularyLog/VocabularyLog.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"VocabularyLog/Preview Content\"";
 				DEVELOPMENT_TEAM = L27L4K8SQU;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -461,7 +457,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = VocabularyLogExtension/VocabularyLogExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = L27L4K8SQU;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = VocabularyLogExtension/Info.plist;
@@ -482,7 +478,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = VocabularyLogExtension/VocabularyLogExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = L27L4K8SQU;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = VocabularyLogExtension/Info.plist;
