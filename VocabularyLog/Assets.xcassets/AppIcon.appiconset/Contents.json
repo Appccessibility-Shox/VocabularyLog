@@ -1,25 +1,25 @@
 {
   "images" : [
     {
-      "filename" : "Mini (512)-32 copy.png",
+      "filename" : "Large (1024)-34.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "16x16"
     },
     {
-      "filename" : "Mini (512)-33.png",
+      "filename" : "Large (1024)-33.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "16x16"
     },
     {
-      "filename" : "Mini (512)-32.png",
+      "filename" : "Large (1024)-32.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "32x32"
     },
     {
-      "filename" : "Mini (512)-64.png",
+      "filename" : "Large (1024)-64.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "32x32"

@@ -75,10 +75,9 @@ struct TermItem: View {
         .onAppear {
             Api().define(word: word) { result in
                 switch result {
-                case.success(let resultObject):
+                case.success(let defs):
                     apiErrorDescription = nil
-                    print("1")
-                    definitions = resultObject?.first?.meanings.first?.definitions
+                    definitions = defs
                 case.failure(.badURL):
                     print("2")
                     apiErrorDescription = "􀙥 Invalid Fetch URL: "
