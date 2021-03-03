@@ -15,7 +15,7 @@ struct TermItem: View {
 
         var vocabularyLog = (try? JSONDecoder().decode([Term].self, from: vocabularyLogAsData)) ?? [Term]()
         let word: String = term.word
-        let source: String = term.url
+        let source: String? = term.url
         let example: String = term.exampleSentence
         let termPreferredDef: String? = term.preferredDef
 
@@ -49,6 +49,7 @@ struct TermItem: View {
                         vocabularyLog[index].preferredDef = self.preferredDefinition
                         updateLogInAppStorage(log: vocabularyLog)
                     })
+                    .textFieldStyle(RoundedBorderTextFieldStyle.init())
                 }
                 else {
                     Text("􀙇 Fetching Definitions...")
@@ -64,8 +65,12 @@ struct TermItem: View {
             Text("\""+example+"\"")
                 .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                 .padding(1)
-            LinkView(source: source)
+            if source != nil {
+                LinkView(source: source!)
+            }
         }
+        .padding(10)
+        .background(Color.init("bubbleColor"))
         .cornerRadius(8)
         .onAppear {
             Api().define(word: word) { result in
@@ -89,7 +94,6 @@ struct TermItem: View {
                 }
             }
         }
-        .padding(10)
     }
 
     func updateLogInAppStorage(log: [Term]) {
@@ -107,24 +111,22 @@ struct TermItem_Previews: PreviewProvider {
     }
 }
 
-extension NSTextField {
-    open override var focusRingType: NSFocusRingType {
-        get { .none }
-        set { }
-    }
-}
-
 struct LinkView: View {
     var source: String
     var body: some View {
-        Link(destination: URL(string: source)!, label: {
-            HStack {
-                Image(systemName: "safari")
-                Text(URL(string: source)!.host ?? "Source Link")
-            }
-            .padding(5)
-            .background(Color.init("LinkColor"))
-            .cornerRadius(6)
-        })
+        if source != "" {
+            Link(destination: URL(string: source)!, label: {
+                HStack {
+                    Image(systemName: "safari")
+                    Text(URL(string: source)!.host ?? "Source Link")
+                        .font(.callout)
+                        .offset(x: -4)
+                }
+                .foregroundColor(Color.init("BW"))
+                .padding(6)
+                .background(Color.init("LinkColor"))
+                .cornerRadius(9)
+            })
+        }
     }
 }
