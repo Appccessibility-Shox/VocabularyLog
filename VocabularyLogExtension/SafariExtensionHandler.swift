@@ -2,14 +2,6 @@ import SafariServices
 
 let defaults = UserDefaults.init(suiteName: "L27L4K8SQU.VocabularyLog")!
 
-struct Term: Codable {
-    var word: String
-    var exampleSentence: String
-    var url: String
-    var preferredDef: String
-    var id = UUID()
-}
-
 class SafariExtensionHandler: SFSafariExtensionHandler {
 
     override func contextMenuItemSelected(withCommand command: String, in page: SFSafariPage, userInfo: [String : Any]? = nil) {
@@ -18,7 +10,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         let word = userInfo!["term"] as! String
         let exampleSentence = userInfo!["exampleSentence"] as! String
         let url = userInfo!["url"] as! String
-        let term = Term(word: word, exampleSentence: exampleSentence, url: url, preferredDef: "")
+        let term = Term(word: word, exampleSentence: exampleSentence, url: url)
         var vocabularyLog: [Term]
 
         if defaults.object(forKey: "terms") != nil {

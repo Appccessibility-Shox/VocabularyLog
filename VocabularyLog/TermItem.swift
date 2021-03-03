@@ -6,58 +6,90 @@ struct TermItem: View {
 
     @State var preferredDefinition: String = ""
     @State var definitions: [Definition]?
+    @State var apiErrorDescription: String?
 
-    var term: String
+    var term: Term
     var index: Int
-    var source: String
-    var example: String
 
     var body: some View {
+
         var vocabularyLog = (try? JSONDecoder().decode([Term].self, from: vocabularyLogAsData)) ?? [Term]()
+        let word: String = term.word
+        let source: String = term.url
+        let example: String = term.exampleSentence
+        let termPreferredDef: String? = term.preferredDef
+
         VStack(alignment: .leading) {
             HStack {
-                Text("\(term):")
+                Text("\(word):")
                     .font(.title3)
                     .fontWeight(.bold)
                     .foregroundColor(Color.yellow)
                     .fixedSize()
-                Picker("Select", selection: Binding(get: {
-                    preferredDefinition
-                }, set: { newValue in
-                    vocabularyLog[index].preferredDef = newValue
-                    updateLogInAppStorage(log: vocabularyLog)
-                    preferredDefinition = newValue
-                })) {
-                    ForEach(definitions ?? [], id: \.definition) { definition in
-                        Text(definition.definition)
-                    }
-                }.labelsHidden()
+                if termPreferredDef != nil { // no need to pick anything.
+                    Text(preferredDefinition)
+                        .italic()
+                    Spacer()
+                }
+                else if definitions?.count ?? 0 > 0 {
+                    Picker("Select", selection: Binding(get: {
+                        preferredDefinition
+                    }, set: { newValue in
+                        vocabularyLog[index].preferredDef = newValue
+                        updateLogInAppStorage(log: vocabularyLog)
+                        preferredDefinition = newValue
+                    })) {
+                        ForEach(definitions ?? [], id: \.definition) { definition in
+                            Text(definition.definition)
+                        }
+                    }.labelsHidden()
+                }
+                else if apiErrorDescription != nil {
+                    TextField("\(apiErrorDescription ?? " ")Please type a definition.", text: $preferredDefinition, onCommit: {
+                        vocabularyLog[index].preferredDef = self.preferredDefinition
+                        updateLogInAppStorage(log: vocabularyLog)
+                    })
+                }
+                else {
+                    Text("􀙇 Fetching Definitions...")
+                        .foregroundColor(.blue)
+                    Spacer()
+                }
             }.onAppear {
-                print(index)
+                print(termPreferredDef ?? "🏎")
                 if (index >= 0 && vocabularyLog.count > index) {
-                    preferredDefinition = vocabularyLog[index].preferredDef
+                    preferredDefinition = termPreferredDef ?? ""
                 }
             }
             Text("\""+example+"\"")
                 .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                 .padding(1)
-            Link(destination: URL(string: source)!, label: {
-                HStack {
-                    Image(systemName: "safari")
-                    Text(URL(string: source)!.host ?? "Source Link")
-                        .foregroundColor(.white)
-                }.padding(5)
-                .background(Color.gray)
-                .cornerRadius(6)
-            })
+            LinkView(source: source)
         }
-        .background(Color.init("mg"))
         .cornerRadius(8)
         .onAppear {
-            Api().define(word: term) { (results) in
-                definitions = results?.first?.meanings.first?.definitions ?? [Definition(definition: (vocabularyLog[index].preferredDef))]
+            Api().define(word: word) { result in
+                switch result {
+                case.success(let resultObject):
+                    apiErrorDescription = nil
+                    print("1")
+                    definitions = resultObject?.first?.meanings.first?.definitions
+                case.failure(.badURL):
+                    print("2")
+                    apiErrorDescription = "􀙥 Invalid Fetch URL: "
+                case.failure(.decodingError):
+                    print("3")
+                    apiErrorDescription = "􀄢 Unknown Word: "
+                case.failure(.requestFailed):
+                    print("4")
+                    apiErrorDescription = "􀙥 Connection Failure: "
+                case.failure(.unknown):
+                    print("5")
+                    apiErrorDescription = "􀒉 Unknown Error: "
+                }
             }
         }
+        .padding(10)
     }
 
     func updateLogInAppStorage(log: [Term]) {
@@ -71,7 +103,7 @@ struct TermItem: View {
 
 struct TermItem_Previews: PreviewProvider {
     static var previews: some View {
-        TermItem(term: "Percolate", index: 1, source: "wikipedia.com", example: "You'll meet a girl and find out later / she smells just like a percolator.")
+        TermItem(term: Term(word: "Percolate", exampleSentence: "You'll meet a girl and find out later, she smells just like a percolator.", url: "google", preferredDef: "to filter"), index: 1)
     }
 }
 
@@ -79,5 +111,20 @@ extension NSTextField {
     open override var focusRingType: NSFocusRingType {
         get { .none }
         set { }
+    }
+}
+
+struct LinkView: View {
+    var source: String
+    var body: some View {
+        Link(destination: URL(string: source)!, label: {
+            HStack {
+                Image(systemName: "safari")
+                Text(URL(string: source)!.host ?? "Source Link")
+            }
+            .padding(5)
+            .background(Color.init("LinkColor"))
+            .cornerRadius(6)
+        })
     }
 }
