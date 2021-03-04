@@ -1,6 +1,5 @@
 import SafariServices
 
-let defaults = UserDefaults.init(suiteName: "L27L4K8SQU.VocabularyLog")!
 
 class SafariExtensionHandler: SFSafariExtensionHandler {
 
