@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB29F0D925F0D40F006B6894 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCEB0A925EEFF75002587E7 /* Shared.swift */; };
 		CB2BDACA25EDD7E90084735C /* VocabularyLogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2BDAC925EDD7E90084735C /* VocabularyLogApp.swift */; };
 		CB2BDACC25EDD7E90084735C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2BDACB25EDD7E90084735C /* ContentView.swift */; };
 		CB2BDACE25EDD7EA0084735C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB2BDACD25EDD7EA0084735C /* Assets.xcassets */; };
@@ -18,8 +19,7 @@
 		CB2BDAFB25EDD8430084735C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2BDAFA25EDD8430084735C /* API.swift */; };
 		CB2BDAFF25EDD8620084735C /* TermItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2BDAFE25EDD8620084735C /* TermItem.swift */; };
 		CB6E1CC025EF49ED00FE3964 /* AddWordSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6E1CBF25EF49ED00FE3964 /* AddWordSheet.swift */; };
-		CBCEB0AA25EEFF75002587E7 /* Term.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCEB0A925EEFF75002587E7 /* Term.swift */; };
-		CBCEB0AB25EEFF75002587E7 /* Term.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCEB0A925EEFF75002587E7 /* Term.swift */; };
+		CBCEB0AA25EEFF75002587E7 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCEB0A925EEFF75002587E7 /* Shared.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +63,7 @@
 		CB2BDAFA25EDD8430084735C /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		CB2BDAFE25EDD8620084735C /* TermItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermItem.swift; sourceTree = "<group>"; };
 		CB6E1CBF25EF49ED00FE3964 /* AddWordSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWordSheet.swift; sourceTree = "<group>"; };
-		CBCEB0A925EEFF75002587E7 /* Term.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Term.swift; sourceTree = "<group>"; };
+		CBCEB0A925EEFF75002587E7 /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +107,7 @@
 		CB2BDAC825EDD7E90084735C /* VocabularyLog */ = {
 			isa = PBXGroup;
 			children = (
-				CBCEB0A925EEFF75002587E7 /* Term.swift */,
+				CBCEB0A925EEFF75002587E7 /* Shared.swift */,
 				CB2BDAC925EDD7E90084735C /* VocabularyLogApp.swift */,
 				CB2BDACB25EDD7E90084735C /* ContentView.swift */,
 				CB2BDAFE25EDD8620084735C /* TermItem.swift */,
@@ -258,7 +258,7 @@
 			files = (
 				CB2BDAFF25EDD8620084735C /* TermItem.swift in Sources */,
 				CB2BDACC25EDD7E90084735C /* ContentView.swift in Sources */,
-				CBCEB0AA25EEFF75002587E7 /* Term.swift in Sources */,
+				CBCEB0AA25EEFF75002587E7 /* Shared.swift in Sources */,
 				CB6E1CC025EF49ED00FE3964 /* AddWordSheet.swift in Sources */,
 				CB2BDAFB25EDD8430084735C /* API.swift in Sources */,
 				CB2BDACA25EDD7E90084735C /* VocabularyLogApp.swift in Sources */,
@@ -270,7 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB2BDAE425EDD7FB0084735C /* SafariExtensionHandler.swift in Sources */,
-				CBCEB0AB25EEFF75002587E7 /* Term.swift in Sources */,
+				CB29F0D925F0D40F006B6894 /* Shared.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,7 +409,7 @@
 				CODE_SIGN_ENTITLEMENTS = VocabularyLog/VocabularyLog.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"VocabularyLog/Preview Content\"";
 				DEVELOPMENT_TEAM = L27L4K8SQU;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -435,7 +435,7 @@
 				CODE_SIGN_ENTITLEMENTS = VocabularyLog/VocabularyLog.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"VocabularyLog/Preview Content\"";
 				DEVELOPMENT_TEAM = L27L4K8SQU;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -457,7 +457,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = VocabularyLogExtension/VocabularyLogExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = L27L4K8SQU;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = VocabularyLogExtension/Info.plist;
@@ -478,7 +478,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = VocabularyLogExtension/VocabularyLogExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = L27L4K8SQU;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = VocabularyLogExtension/Info.plist;
