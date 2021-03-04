@@ -18,6 +18,7 @@
 		CB2BDAF325EDD7FB0084735C /* VocabularyLogExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CB2BDADE25EDD7FB0084735C /* VocabularyLogExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CB2BDAFB25EDD8430084735C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2BDAFA25EDD8430084735C /* API.swift */; };
 		CB2BDAFF25EDD8620084735C /* TermItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2BDAFE25EDD8620084735C /* TermItem.swift */; };
+		CB5E493625F0E98D00A76BF1 /* compromise.js in Resources */ = {isa = PBXBuildFile; fileRef = CB5E493525F0E98D00A76BF1 /* compromise.js */; };
 		CB6E1CC025EF49ED00FE3964 /* AddWordSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6E1CBF25EF49ED00FE3964 /* AddWordSheet.swift */; };
 		CBCEB0AA25EEFF75002587E7 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCEB0A925EEFF75002587E7 /* Shared.swift */; };
 /* End PBXBuildFile section */
@@ -62,6 +63,7 @@
 		CB2BDAF025EDD7FB0084735C /* VocabularyLogExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VocabularyLogExtension.entitlements; sourceTree = "<group>"; };
 		CB2BDAFA25EDD8430084735C /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		CB2BDAFE25EDD8620084735C /* TermItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermItem.swift; sourceTree = "<group>"; };
+		CB5E493525F0E98D00A76BF1 /* compromise.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = compromise.js; sourceTree = "<group>"; };
 		CB6E1CBF25EF49ED00FE3964 /* AddWordSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWordSheet.swift; sourceTree = "<group>"; };
 		CBCEB0A925EEFF75002587E7 /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				CB2BDAE825EDD7FB0084735C /* script.js */,
+				CB5E493525F0E98D00A76BF1 /* compromise.js */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB5E493625F0E98D00A76BF1 /* compromise.js in Resources */,
 				CB2BDAE925EDD7FB0084735C /* script.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,7 +413,7 @@
 				CODE_SIGN_ENTITLEMENTS = VocabularyLog/VocabularyLog.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"VocabularyLog/Preview Content\"";
 				DEVELOPMENT_TEAM = L27L4K8SQU;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -435,7 +439,7 @@
 				CODE_SIGN_ENTITLEMENTS = VocabularyLog/VocabularyLog.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"VocabularyLog/Preview Content\"";
 				DEVELOPMENT_TEAM = L27L4K8SQU;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -457,7 +461,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = VocabularyLogExtension/VocabularyLogExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = L27L4K8SQU;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = VocabularyLogExtension/Info.plist;
@@ -478,7 +482,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = VocabularyLogExtension/VocabularyLogExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = L27L4K8SQU;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = VocabularyLogExtension/Info.plist;
