@@ -8,7 +8,7 @@
 </h1>
 If you're always discovering new words online, but can never seem to commit them to memory, it may help to keep a "vocabulary log". But maintaining one manually can be a chore. Vocabulary Log for Safari takes the hassle out of expanding your vocabulary and makes discovering & learning words fun again.
 
-![Vocabulary Log Running on a MacBookPro](Resources/MacBook%20Pro.png)
+![Vocabulary Log Running on a MacBookPro](Resources/MacBook Pro.png)
 
 ### Easily Add New Terms:
 
