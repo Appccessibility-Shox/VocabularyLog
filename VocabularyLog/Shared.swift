@@ -15,5 +15,5 @@ struct Term: Codable {
     var id = UUID()
 }
 
-let bundleID = "L27L4K8SQU.VocabularyLog"
-let defaults = UserDefaults.init(suiteName: bundleID)!
+let appGroupID = "L27L4K8SQU.VocabularyLog"
+let defaults = UserDefaults.init(suiteName: appGroupID)!
