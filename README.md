@@ -15,3 +15,5 @@ If you're always discovering new words online, but can never seem to commit them
 First, add a word via the context menu | Then, pick a preferred definition.
 :-------------------------------------:|:----------------------------------:
 ![](https://github.com/patrickshox/VocabularyLog/blob/main/Resources/contextMenuSelected.gif)  |  ![](https://github.com/patrickshox/VocabularyLog/blob/main/Resources/termAddedToApp.gif)
+
+If no definitions could be fetched via the Google Dictionary API, you'll be asked to type your preferred definition yourself. Finally, you can always add terms completely manually via the + button in the top right.
