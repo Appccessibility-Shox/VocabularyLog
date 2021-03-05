@@ -24,7 +24,7 @@ struct TermItem: View {
                 Text("\(word.capitalized):")
                     .font(.title3)
                     .fontWeight(.bold)
-                    .foregroundColor(Color.yellow)
+                    .foregroundColor(Color.init("BY"))
                     .fixedSize()
                 if termPreferredDef != nil { // no need to pick anything.
                     Text(preferredDefinition)
