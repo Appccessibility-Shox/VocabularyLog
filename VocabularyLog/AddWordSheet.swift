@@ -9,15 +9,13 @@ import SwiftUI
 
 struct AddWordSheet: View {
     @Binding var showingDetail: Bool
-    @AppStorage("terms", store: defaults) var vocabularyLogAsData = try! JSONEncoder().encode([Term]())
-
     @State var newWord: String = ""
     @State var newDefinition: String = ""
     @State var newExampleSentence: String = ""
     @State var newSource: String = ""
 
     var body: some View {
-        var vocabularyLog = (try? JSONDecoder().decode([Term].self, from: vocabularyLogAsData)) ?? [Term]()
+        var vocabularyLog = (try? JSONDecoder().decode([Term].self, from: defaults.object(forKey: "terms") as! Data)) ?? [Term]()
         Text("Manually Add Term")
             .font(.title2)
             .fontWeight(.bold)

@@ -33,7 +33,7 @@ struct TermItem: View {
                 }
                 else if definitions?.count ?? 0 > 0 {
                     Picker("Select", selection: Binding(get: {
-                        preferredDefinition
+                        return preferredDefinition
                     }, set: { newValue in
                         vocabularyLog[index].preferredDef = newValue
                         updateLogInAppStorage(log: vocabularyLog)
