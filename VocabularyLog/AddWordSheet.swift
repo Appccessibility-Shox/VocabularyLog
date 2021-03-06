@@ -15,7 +15,7 @@ struct AddWordSheet: View {
     @State var newSource: String = ""
 
     var body: some View {
-        var vocabularyLog = (try? JSONDecoder().decode([Term].self, from: defaults.object(forKey: "terms") as! Data)) ?? [Term]()
+        var vocabularyLog = (try? JSONDecoder().decode([Term].self, from: defaults.object(forKey: "terms") as? Data ?? Data())) ?? [Term]()
         Text("Manually Add Term")
             .font(.title2)
             .fontWeight(.bold)
