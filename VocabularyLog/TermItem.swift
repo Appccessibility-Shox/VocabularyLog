@@ -57,7 +57,6 @@ struct TermItem: View {
                     Spacer()
                 }
             }.onAppear {
-                print(termPreferredDef ?? "🏎")
                 if (index >= 0 && vocabularyLog.count > index) {
                     preferredDefinition = termPreferredDef ?? ""
                 }
@@ -65,7 +64,7 @@ struct TermItem: View {
             Text("\""+example+"\"")
                 .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                 .padding(1)
-            if source != nil {
+            if source != nil && source != "" {
                 LinkView(source: source!)
             }
         }
@@ -95,37 +94,28 @@ struct TermItem: View {
         }
     }
 
-    func updateLogInAppStorage(log: [Term]) {
-        let encoder = JSONEncoder()
-        if let updatedLog = try? encoder.encode(log) {
-            defaults.set(updatedLog, forKey: "terms")
-        }
-    }
-
-}
-
-struct TermItem_Previews: PreviewProvider {
-    static var previews: some View {
-        TermItem(term: Term(word: "Percolate", exampleSentence: "You'll meet a girl and find out later, she smells just like a percolator.", url: "google", preferredDef: "to filter"), index: 1)
-    }
 }
 
 struct LinkView: View {
     var source: String
     var body: some View {
-        if source != "" {
-            Link(destination: URL(string: source)!, label: {
-                HStack {
-                    Image(systemName: "safari")
-                    Text(URL(string: source)!.host ?? "Source Link")
-                        .font(.callout)
-                        .offset(x: -4)
-                }
-                .foregroundColor(Color.init("BW"))
-                .padding(6)
-                .background(Color.init("LinkColor"))
-                .cornerRadius(9)
-            })
-        }
+        Link(destination: URL(string: source)!, label: {
+            HStack {
+                Image(systemName: "safari")
+                Text(URL(string: source)!.host ?? "Source Link")
+                    .font(.callout)
+                    .offset(x: -4)
+            }
+            .foregroundColor(Color.init("BW"))
+            .padding(6)
+            .background(Color.init("LinkColor"))
+            .cornerRadius(9)
+        })
+    }
+}
+
+struct TermItem_Previews: PreviewProvider {
+    static var previews: some View {
+        TermItem(term: Term(word: "Percolate", exampleSentence: "You'll meet a girl and find out later, she smells just like a percolator.", url: "google", preferredDef: "to Filter"), index: 1)
     }
 }

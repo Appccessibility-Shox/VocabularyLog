@@ -1,10 +1,3 @@
-//
-//  Term.swift
-//  VocabularyLog
-//
-//  Created by Patrick Botros on 3/2/21.
-//
-
 import Foundation
 
 struct Term: Codable {

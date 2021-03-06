@@ -19,12 +19,7 @@ struct ContentView: View {
         }
         .toolbar(content: {
             Spacer()
-            Button(action: {
-                showingDetail.toggle()
-            }, label: {
-                Image(systemName: "plus")
-                    .foregroundColor(Color.gray)
-            })
+            addWordButton
         })
         .sheet(isPresented: $showingDetail) {
             AddWordSheet(showingDetail: $showingDetail)
@@ -51,16 +46,26 @@ struct ContentView: View {
 
     }
 
-    func updateLogInAppStorage(log: [Term]) {
-        let encoder = JSONEncoder()
-        if let updatedLog = try? encoder.encode(log) {
-            defaults.set(updatedLog, forKey: "terms")
-        }
+    var addWordButton: some View {
+        Button(action: {
+            showingDetail.toggle()
+        }, label: {
+            Image(systemName: "plus")
+                .foregroundColor(Color.gray)
+        })
     }
+
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+func updateLogInAppStorage(log: [Term]) {
+    let encoder = JSONEncoder()
+    if let updatedLog = try? encoder.encode(log) {
+        defaults.set(updatedLog, forKey: "terms")
     }
 }
