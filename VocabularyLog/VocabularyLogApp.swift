@@ -1,10 +1,3 @@
-//
-//  VocabularyLogApp.swift
-//  VocabularyLog
-//
-//  Created by Patrick Botros on 3/1/21.
-//
-
 import SwiftUI
 
 class AppDelegate: NSObject, NSApplicationDelegate {

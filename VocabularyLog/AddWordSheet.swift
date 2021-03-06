@@ -1,10 +1,3 @@
-//
-//  AddWordSheet.swift
-//  VocabularyLog
-//
-//  Created by Patrick Botros on 3/2/21.
-//
-
 import SwiftUI
 
 struct AddWordSheet: View {
@@ -31,7 +24,7 @@ struct AddWordSheet: View {
                         .textFieldStyle(RoundedBorderTextFieldStyle.init())
                         .frame(width: 300)
                 }
-                .padding(.vertical, 2)
+                    .padding(.vertical, 2)
                 HStack {
                     Spacer()
                     Text("Definition:")
@@ -40,7 +33,7 @@ struct AddWordSheet: View {
                         .textFieldStyle(RoundedBorderTextFieldStyle.init())
                         .frame(width: 300)
                 }
-                .padding(.vertical, 2)
+                    .padding(.vertical, 2)
                 HStack {
                     Spacer()
                     Text("Example Sentence:")
@@ -49,7 +42,7 @@ struct AddWordSheet: View {
                         .textFieldStyle(RoundedBorderTextFieldStyle.init())
                         .frame(width: 300)
                 }
-                .padding(.vertical, 2)
+                    .padding(.vertical, 2)
                 HStack {
                     Spacer()
                     Text("URL:")
@@ -63,37 +56,43 @@ struct AddWordSheet: View {
             Divider()
             HStack {
                 Spacer()
-                Button("Cancel", action: {
-                    showingDetail = false
-                }).keyboardShortcut(.cancelAction)
-                Button("Save", action: {
-                    let newTerm = Term(word: newWord, exampleSentence: newExampleSentence, url: newSource, preferredDef: newDefinition, id: UUID())
-                    vocabularyLog.append(newTerm)
-                    updateLogInAppStorage(log: vocabularyLog)
-                    showingDetail = false
-                }).keyboardShortcut(.defaultAction)
-                .disabled(newWord.count < 1 || newDefinition.count < 1 || newExampleSentence.count < 1)
+                Button("Cancel", action: hideSheet)
+                    .keyboardShortcut(.cancelAction)
+                Button("Save", action: {saveNewWord(to: &vocabularyLog)})
+                    .keyboardShortcut(.defaultAction)
+                    .disabled(missingFormEntries)
             }.padding(10)
         }
         .frame(width: 420)
         .padding(10)
     }
     
-    func updateLogInAppStorage(log: [Term]) {
-        let encoder = JSONEncoder()
-        if let updatedLog = try? encoder.encode(log) {
-            defaults.set(updatedLog, forKey: "terms")
-        }
+    var missingFormEntries: Bool {
+        // true if some form entries are missing. False otherwise.
+        return newWord.count < 1 || newDefinition.count < 1 || newExampleSentence.count < 1
+    }
+
+    func saveNewWord(to log: inout [Term]) {
+        let newTerm = Term(word: newWord, exampleSentence: newExampleSentence, url: newSource, preferredDef: newDefinition, id: UUID())
+        log.append(newTerm)
+        updateLogInAppStorage(log: log)
+        hideSheet()
+    }
+
+    func hideSheet() {
+        showingDetail = false
     }
 }
 
+// Preview Code:
 struct PreviewWrapper: View {
-    @State var a = true
+    @State var yes = true
     
     var body: some View {
-        AddWordSheet(showingDetail: $a)
+        AddWordSheet(showingDetail: $yes)
     }
 }
+
 struct AddWordSheet_Previews: PreviewProvider {
     static var previews: some View {
         PreviewWrapper()
