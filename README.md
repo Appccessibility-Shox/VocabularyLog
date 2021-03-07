@@ -2,7 +2,7 @@
   <span align="center">
     Vocabulary Log <img src="Resources/icon.png" alt="logo" width="32" height="32">
   </span>
-  <a href="https://apps.apple.com/us/app/keys-for-safari/id1494642810?mt=12">
+  <a href="https://apps.apple.com/us/app/vocabulary-log/id1556420310?mt=12">
     <img align="right" style="position: absolute" src="Resources/MacAppStoreBadge.svg">
   </a>
 </h1>
