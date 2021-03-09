@@ -10,7 +10,7 @@ struct ContentView: View {
         var vocabularyLog = (try? JSONDecoder().decode([Term].self, from: vocabularyLogAsData)) ?? [Term]()
 
         HStack {
-            Text("Vocabulary Log 􀌀")
+            Text("Vocabulary Log")
                 .font(Font.custom("SF Compact Rounded", size: 33))
                 .fontWeight(.bold)
                 .foregroundColor(Color.yellow)
