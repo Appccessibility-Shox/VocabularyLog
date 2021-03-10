@@ -3,6 +3,7 @@ import SwiftUI
 struct ContentView: View {
 
     @AppStorage("terms", store: defaults) var vocabularyLogAsData = try! JSONEncoder().encode([Term]())
+    @AppStorage("forceClickActivated", store: defaults) var forceClickActivated = false
     @State var showingDetail = false
 
     var body: some View {
@@ -19,6 +20,12 @@ struct ContentView: View {
         }
         .toolbar(content: {
             Spacer()
+            Button(action: {
+                forceClickActivated.toggle()
+            }, label: {
+                Label("Add Term on Force Click", systemImage: "cursorarrow.motionlines.click")
+                    .foregroundColor(forceClickActivated ? Color.yellow : Color.gray)
+            })
             addWordButton
         })
         .sheet(isPresented: $showingDetail) {
@@ -50,7 +57,7 @@ struct ContentView: View {
         Button(action: {
             showingDetail.toggle()
         }, label: {
-            Image(systemName: "plus")
+            Label("Manually Add Term", systemImage: "plus")
                 .foregroundColor(Color.gray)
         })
     }

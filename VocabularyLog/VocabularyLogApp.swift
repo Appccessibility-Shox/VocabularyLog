@@ -10,6 +10,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let emptyJSON = try! JSONEncoder().encode([Term]())
 
         try! emptyJSON.write(to: plistFileLocation)
+        defaults.register(defaults: ["forceClickActivated": false])
     }
 }
 
