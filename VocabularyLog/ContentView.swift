@@ -5,7 +5,9 @@ struct ContentView: View {
     @AppStorage("terms", store: defaults) var vocabularyLogAsData = try! JSONEncoder().encode([Term]())
     @AppStorage("forceClickActivated", store: defaults) var forceClickActivated = false
     @State var showingDetail = false
-
+    @State var showingAlert = false
+    @AppStorage("alertHasShownBefore", store: defaults) var alertHasShownBefore = true
+    
     var body: some View {
 
         var vocabularyLog = (try? JSONDecoder().decode([Term].self, from: vocabularyLogAsData)) ?? [Term]()
@@ -21,11 +23,20 @@ struct ContentView: View {
         .toolbar(content: {
             Spacer()
             Button(action: {
+                showingAlert = true
                 forceClickActivated.toggle()
             }, label: {
                 Label("Add Term on Force Click", systemImage: "cursorarrow.motionlines.click")
                     .foregroundColor(forceClickActivated ? Color.yellow : Color.gray)
             })
+                .alert(isPresented:
+                        Binding(get: {!self.alertHasShownBefore && showingAlert}, set: {newValue in self.showingAlert = newValue}),
+                    content: {
+                        Alert(title: Text("Add Term on Force Click"), message: Text("Force clicking on a word in Safari will now add the term to your log."), dismissButton: .default(Text("Got it!"), action: {
+                            alertHasShownBefore = true
+                        }))
+                    }
+                )
             addWordButton
         })
         .sheet(isPresented: $showingDetail) {

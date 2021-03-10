@@ -17,21 +17,33 @@ function isLink(element) {
 }
 
 var mousedowntarget
+var mouseMovedSinceMouseDown = false
+var mousePosX
+var mousePosY
 
 document.addEventListener("mousedown", function(event) {
     mousedowntarget = event.target
-    console.log(event.target, "md")
+    mouseMovedSinceMouseDown = false
+    console.log("down")
+    mousePosX = event.clientX
+    mousePosY = event.clientY
+})
+
+document.addEventListener('mousemove', function(event) {
+    if (Math.abs(event.clientX - mousePosX) > 2 || Math.abs(event.clientY - mousePosY) > 2) {
+        console.log("move")
+        mouseMovedSinceMouseDown = true
+    }
 })
 
 document.addEventListener("webkitmouseforcedown", function(event) {
-    console.log(event.target, "wmfd")
     const range = window.getSelection().getRangeAt(0);
     const node = window.getSelection().anchorNode;
     anAnchor = isLink(event.target)
 
     const term = getClickedWord()
     var regExp = /[a-zA-Z]/g;
-    if (regExp.test(term) && !anAnchor && mousedowntarget == event.target){
+    if (regExp.test(term) && !anAnchor && mousedowntarget == event.target && !mouseMovedSinceMouseDown){
         const appropriateSentence = getAppropriateSentence(range.startOffset, range.endOffset, node, range.toString().trim())
         safari.extension.dispatchMessage("forcepress", {"term": term, "exampleSentence": appropriateSentence, "url": window.location.href})
     }
