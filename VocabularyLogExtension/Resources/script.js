@@ -24,14 +24,12 @@ var mousePosY
 document.addEventListener("mousedown", function(event) {
     mousedowntarget = event.target
     mouseMovedSinceMouseDown = false
-    console.log("down")
     mousePosX = event.clientX
     mousePosY = event.clientY
 })
 
 document.addEventListener('mousemove', function(event) {
     if (Math.abs(event.clientX - mousePosX) > 2 || Math.abs(event.clientY - mousePosY) > 2) {
-        console.log("move")
         mouseMovedSinceMouseDown = true
     }
 })

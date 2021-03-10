@@ -42,7 +42,6 @@ class Api: ObservableObject {
                         }
                     }
                 } else {
-                    print("k")
                     completion(.failure(.decodingError))
                 }
             } else if error != nil {

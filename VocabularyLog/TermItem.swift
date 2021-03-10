@@ -78,16 +78,12 @@ struct TermItem: View {
                     apiErrorDescription = nil
                     definitions = defs
                 case.failure(.badURL):
-                    print("2")
                     apiErrorDescription = "􀙥 Invalid Fetch URL: "
                 case.failure(.decodingError):
-                    print("3")
                     apiErrorDescription = "􀄢 Unknown Word: "
                 case.failure(.requestFailed):
-                    print("4")
                     apiErrorDescription = "􀙥 Connection Failure: "
                 case.failure(.unknown):
-                    print("5")
                     apiErrorDescription = "􀒉 Unknown Error: "
                 }
             }
