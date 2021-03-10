@@ -11,6 +11,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         try! emptyJSON.write(to: plistFileLocation)
         defaults.register(defaults: ["forceClickActivated": false])
+        defaults.register(defaults: ["alertHasShownBefore": false])
     }
 }
 
