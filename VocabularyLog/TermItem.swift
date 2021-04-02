@@ -17,7 +17,6 @@ struct TermItem: View {
         let word: String = term.word
         let source: String? = term.url
         let example: String = term.exampleSentence
-        let termPreferredDef: String? = term.preferredDef
 
         VStack(alignment: .leading) {
             HStack {
@@ -26,7 +25,7 @@ struct TermItem: View {
                     .fontWeight(.bold)
                     .foregroundColor(Color.init("BY"))
                     .fixedSize()
-                if termPreferredDef != nil { // no need to pick anything.
+                if term.preferredDef != nil { // no need to pick anything.
                     Text(preferredDefinition)
                         .italic()
                     Spacer()
@@ -36,8 +35,8 @@ struct TermItem: View {
                         return preferredDefinition
                     }, set: { newValue in
                         vocabularyLog[index].preferredDef = newValue
-                        updateLogInAppStorage(log: vocabularyLog)
                         preferredDefinition = newValue
+                        updateLogInAppStorage(log: vocabularyLog)
                     })) {
                         ForEach(definitions ?? [], id: \.definition) { definition in
                             Text(definition.definition)
@@ -58,7 +57,7 @@ struct TermItem: View {
                 }
             }.onAppear {
                 if (index >= 0 && vocabularyLog.count > index) {
-                    preferredDefinition = termPreferredDef ?? ""
+                    preferredDefinition = term.preferredDef ?? ""
                 }
             }
             Text("\""+example+"\"")
