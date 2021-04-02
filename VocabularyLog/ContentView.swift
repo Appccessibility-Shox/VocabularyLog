@@ -6,6 +6,7 @@ struct ContentView: View {
     @AppStorage("forceClickActivated", store: defaults) var forceClickActivated = false
     @State var showingDetail = false
     @State var showingAlert = false
+    @State private var isImporting: Bool = false
     @AppStorage("alertHasShownBefore", store: defaults) var alertHasShownBefore = true
     
     var body: some View {
@@ -22,6 +23,20 @@ struct ContentView: View {
         }
         .toolbar(content: {
             Spacer()
+            Button(action: {
+                isImporting = true
+            }, label: {
+                Label("Import", systemImage: "square.and.arrow.down")
+                    .foregroundColor(Color.yellow)
+            })
+            Button(action: {
+                // note: Apparently, setting a preferred definition doesn't immediately make vocabularyLog reflect that here (even though it does for termitem). So get it directly from storage.
+                let storageLog = try? JSONDecoder().decode([Term].self, from: vocabularyLogAsData)
+                writeLogToDownloads(log: storageLog ?? vocabularyLog)
+            }, label: {
+                Label("Export Log", systemImage: "square.and.arrow.up")
+                    .foregroundColor(vocabularyLog.count == 0 ? Color.gray : Color.yellow)
+            }).disabled(vocabularyLog.count == 0)
             Button(action: {
                 showingAlert = true
                 forceClickActivated.toggle()
@@ -41,6 +56,33 @@ struct ContentView: View {
         })
         .sheet(isPresented: $showingDetail) {
             AddWordSheet(showingDetail: $showingDetail)
+        }
+        .fileImporter(
+            isPresented: $isImporting,
+            allowedContentTypes: [.json],
+            allowsMultipleSelection: false
+        ) { result in
+            do {
+                guard let selectedFile: URL = try result.get().first else {
+                    print("couldn't get url")
+                    return
+                }
+                let importedData = try Data(contentsOf: selectedFile)
+                let importedLog = try? JSONDecoder().decode([Term].self, from: importedData)
+                vocabularyLog += importedLog!
+                var alreadyThere = Set<Term>()
+                let uniqueTerms = vocabularyLog.compactMap { term -> Term? in
+                    guard !alreadyThere.contains(term) else { return nil }
+                    alreadyThere.insert(term)
+                    return term
+                }
+                vocabularyLog = uniqueTerms
+                updateLogInAppStorage(log: vocabularyLog)
+                print(vocabularyLog)
+
+            } catch {
+                print("failure")
+            }
         }
         
         if vocabularyLog.count > 0 {
@@ -86,4 +128,40 @@ func updateLogInAppStorage(log: [Term]) {
     if let updatedLog = try? encoder.encode(log) {
         defaults.set(updatedLog, forKey: "terms")
     }
+}
+
+func getDownloadsDirectory() -> URL {
+    let paths = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask)
+    return paths[0]
+}
+
+func writeLogToDownloads(log: [Term]) {
+    let url = getDownloadsDirectory().appendingPathComponent("Vocabulary Log Archive \(getTodayString()).json")
+    if let logJSON = try? JSONEncoder().encode(log) {
+        do {
+            try logJSON.write(to: url)
+        } catch {
+            print(error.localizedDescription)
+        }
+    } else {
+        print("encoding failure")
+    }
+}
+
+func getTodayString() -> String{
+
+    let date = Date()
+    let calender = Calendar.current
+    let components = calender.dateComponents([.year,.month,.day,.hour,.minute,.second], from: date)
+
+    let year = components.year
+    let month = components.month
+    let day = components.day
+    let hour = components.hour
+    let minute = components.minute
+    let second = components.second
+
+    let today_string = String(year!) + "-" + String(month!) + "-" + String(day!) + " at " + String(hour!)  + "." + String(minute!) + "." +  String(second!)
+
+    return today_string
 }
