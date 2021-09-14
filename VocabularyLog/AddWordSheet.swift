@@ -71,7 +71,7 @@ struct AddWordSheet: View {
         // true if some form entries are missing. False otherwise.
         return newWord.count < 1 || newDefinition.count < 1 || newExampleSentence.count < 1
     }
-
+        // Adds new word to user defaults
     func saveNewWord(to log: inout [Term]) {
         let newTerm = Term(word: newWord, exampleSentence: newExampleSentence, url: newSource, preferredDef: newDefinition, id: UUID())
         log.append(newTerm)
