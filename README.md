@@ -1,5 +1,5 @@
 ## Major Contributors
-George and Patrick Botros. And thank you to everyone who has filed issue reports!
+George, Margaret and Patrick Botros. And thank you to everyone who has filed issue reports!
 
 <h1 align="center">
   <span align="center">
