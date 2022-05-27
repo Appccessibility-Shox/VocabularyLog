@@ -1,6 +1,3 @@
-## Major Contributors
-George, Margaret and Patrick Botros. And thank you to everyone who has filed issue reports!
-
 <h1 align="center">
   <span align="center">
     Vocabulary Log <img src="Resources/icon.png" alt="logo" width="32" height="32">
