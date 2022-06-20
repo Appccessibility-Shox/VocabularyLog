@@ -6,6 +6,9 @@
     <img align="right" style="position: absolute" src="Resources/MacAppStoreBadge.svg">
   </a>
 </h1>
+
+**If you have aphasia, dementia or any other accessiblity need, please email me at shockerellapps@gmail.com for 100% off this extension - no questions asked.**
+
 If you're always discovering new words online, but can never seem to commit them to memory, it may help to keep a "vocabulary log". But maintaining one manually can be a chore. Vocabulary Log for Safari takes the hassle out of expanding your vocabulary and makes discovering & learning words fun again.
 
 ![Vocabulary Log Running on a MacBookPro](https://github.com/patrickshox/VocabularyLog/blob/main/Resources/Macbook%20Pro.png)
